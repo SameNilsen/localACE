@@ -3,22 +3,22 @@
 # !pip install accelerate
 # !pip install langchain-huggingface
 
-# import torch
-# import transformers
-# from transformers import (
-#   AutoTokenizer,
-#   AutoModelForCausalLM,
-#   BitsAndBytesConfig,
-#   pipeline
-# )
+import torch
+import transformers
+from transformers import (
+  AutoTokenizer,
+  AutoModelForCausalLM,
+  BitsAndBytesConfig,
+  pipeline
+)
 
-# from transformers import BitsAndBytesConfig
-# from langchain_huggingface import HuggingFacePipeline
+from transformers import BitsAndBytesConfig
+from langchain_huggingface import HuggingFacePipeline
 
-# #from langchain.prompts import PromptTemplate
-# from langchain_core.prompts import PromptTemplate
+#from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
-# import nest_asyncio
+import nest_asyncio
 
 def setupLLM():
     print("SETTING UP LOCAL LLM:")
@@ -211,7 +211,7 @@ def askLLMinteractive(prompt):
         print(result)
 
 def askLLM(prompt):
-    print("\nCALLING LOCAL LLM WITH PROMPT:", prompt + "\n")
+    # print("\nCALLING LOCAL LLM WITH PROMPT:", prompt + "\n")
     # question = input(f"\n -> Spør {model_name} LLM et spørsmål: ")
     
 
@@ -270,10 +270,10 @@ def askLLM(prompt):
     # print(prompt)
     # print("\n\n")
     # print(prompt_big)
-    ###result = mistral_llm.invoke(prompt)
+    result = mistral_llm.invoke(prompt)
     # print("RESULTAT:")
     # print(result)
-    result = "Dette er et testresultat fra askLLM funksjonen. Her skal det egentlig komme et svar fra LLM basert på prompten som sendes."
+    #result = "Dette er et testresultat fra askLLM funksjonen. Her skal det egentlig komme et svar fra LLM basert på prompten som sendes."
     return result
 
 
