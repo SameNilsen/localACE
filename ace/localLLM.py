@@ -274,6 +274,7 @@ def askLLM(prompt):
     # print("RESULTAT:")
     # print(result)
     #result = "Dette er et testresultat fra askLLM funksjonen. Her skal det egentlig komme et svar fra LLM basert på prompten som sendes."
+    result = result.split("---")[1]
     return result
 
 

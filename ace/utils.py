@@ -44,9 +44,9 @@ def initialize_clients(api_provider):
     
     #print("Using Together API for all models")
 
+    print("utils.py: USING LOCAL MODELS...")
     setupLLM()
 
-    print("utils.py: USING LOCAL MODELS...")
     model_name='norallm/normistral-7b-warm-instruct'
     generator_client, reflector_client, curator_client = model_name, model_name, model_name
     return generator_client, reflector_client, curator_client
@@ -202,7 +202,7 @@ def evaluate_single_test_sample(args_tuple, data_processor) -> Tuple[Dict, str]:
 
 
 def evaluate_test_set(data_processor, generator, playbook, test_samples,
-                      max_tokens=4096, log_dir=None, max_workers=20, 
+                      max_tokens=4096, log_dir=None, max_workers=1, 
                       use_json_mode=False) -> Tuple[Dict, Dict]:
     """
     Parallel evaluation of test set - task-agnostic implementation.
