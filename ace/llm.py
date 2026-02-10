@@ -145,14 +145,14 @@ def timed_llm_call(client, api_provider, model, prompt, role, call_id, max_token
                 is_server_error = True
                 print(f"[{role.upper()}] Server error detected in message: {str(e)[:100]}...")
             
-            # Also check for specific OpenAI exceptions
-            if hasattr(openai, 'RateLimitError') and isinstance(e, openai.RateLimitError):
-                is_rate_limit = True
+            # # Also check for specific OpenAI exceptions
+            # if hasattr(openai, 'RateLimitError') and isinstance(e, openai.RateLimitError):
+            #     is_rate_limit = True
             
-            # Check for OpenAI InternalServerError
-            if hasattr(openai, 'InternalServerError') and isinstance(e, openai.InternalServerError):
-                is_server_error = True
-                print(f"[{role.upper()}] OpenAI InternalServerError detected")
+            # # Check for OpenAI InternalServerError
+            # if hasattr(openai, 'InternalServerError') and isinstance(e, openai.InternalServerError):
+            #     is_server_error = True
+            #     print(f"[{role.upper()}] OpenAI InternalServerError detected")
             
             # Debug empty response issues
             if is_empty_response:

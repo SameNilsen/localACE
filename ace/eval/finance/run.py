@@ -105,7 +105,8 @@ def load_data(data_path: str):
             if line:  # Skip empty lines
                 data.append(json.loads(line))
 
-    data_limiter = max(int (len(data)/100), 1)
+    # data_limiter = max(int (len(data)/100), 1)
+    data_limiter = 1
     data = data[:data_limiter]
     
     print(f"Loaded {len(data)} samples from {data_path}")
