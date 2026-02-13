@@ -202,7 +202,7 @@ def evaluate_single_test_sample(args_tuple, data_processor) -> Tuple[Dict, str]:
 
 
 def evaluate_test_set(data_processor, generator, playbook, test_samples,
-                      max_tokens=4096, log_dir=None, max_workers=1, 
+                      max_tokens=4096, log_dir=None, max_workers=20, 
                       use_json_mode=False) -> Tuple[Dict, Dict]:
     """
     Parallel evaluation of test set - task-agnostic implementation.
@@ -221,6 +221,7 @@ def evaluate_test_set(data_processor, generator, playbook, test_samples,
         Tuple of (results_dict, error_logs_dict)
     """
     print(f"\n{'='*40}")
+    max_workers = 1
     print(f"EVALUATING TEST SET - {len(test_samples)} samples, {max_workers} workers")
     print(f"{'='*40}")
 
