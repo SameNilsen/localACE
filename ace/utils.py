@@ -7,7 +7,8 @@ import tiktoken
 from dotenv import load_dotenv
 from typing import List, Dict, Any, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from localLLM import setupLLM
+#from localLLM import setupLLM
+from localLLMqwen import setupLLM
 
 # Load environment variables from .env file
 load_dotenv()
